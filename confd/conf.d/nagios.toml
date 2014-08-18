@@ -1,0 +1,10 @@
+[template]
+src   = "nrpe.cfg.tmpl"
+dest  = "/conf/nagios/nrpe.cfg"
+owner = "root"
+group = "root"
+mode  = "0644"
+keys = [
+  "/",
+]
+reload_cmd = "etcdctl set /services/nagios/reload reload"
