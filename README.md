@@ -20,7 +20,8 @@ from server on stop.
 Run it like that:
 
 ```
-docker run -d -e ETCDCTL_PEERS="172.17.42.1:4001" --volumes-from=configurator --name nagios varsy/nagios-client
+docker run -d -e ETCDCTL_PEERS="172.17.42.1:4001" -p 5666:5666
+--volumes-from=configurator --name nagios varsy/nagios-client
 ```
 where `configurator` is a container which share its volume `/conf/nagios/` with
 nrpe.cfg file inside. 
